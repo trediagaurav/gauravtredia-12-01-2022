@@ -56,18 +56,31 @@ export default function Search() {
             )
         }
     }
-    return (
-        <div>
-            <Form onSubmit={e => { handleSubmit(e) }} className='autocompletetext'>
-                {<Form.Group controlId="formGridState" className="searchBar w-50 container d-flex position-relative align-items-center">
-                    <IoSearch type="submit" value="Submit" onClick={handleSubmit} size={30} className='search' />
-                    <Form.Control type="text" list="cityname" name="city" placeholder="Please type the city" style={{ paddingLeft: "50px" }} value={city} onChange={handleChange} autoComplete="off" required />
-                </Form.Group>}
-                {renderSuggestions()}
-            </Form>
-            <div className='container mt-4 mb-4 border'>
-                {key && <Weather data={key} cityData={value} />}
+    if (responseInfo.isError) {
+        return(
+            <div>
+                <h1 style={{color:'red'}}>ERROR !!!! Request Limitation Over</h1>
             </div>
-        </div>
-    )
+        )
+    }else if (responseInfo.isSuccess){
+        return (
+            <div>
+                <Form onSubmit={e => { handleSubmit(e) }} className='autocompletetext'>
+                    {<Form.Group controlId="formGridState" className="searchBar w-50 container d-flex position-relative align-items-center">
+                        <IoSearch type="submit" value="Submit" onClick={handleSubmit} size={30} className='search' />
+                        <Form.Control type="text" list="cityname" name="city" placeholder="Please type the city" style={{ paddingLeft: "50px" }} value={city} onChange={handleChange} autoComplete="off" required />
+                    </Form.Group>}
+                    {renderSuggestions()}
+                </Form>
+                <div className='container mt-4 mb-4 border'>
+                    {key && <Weather data={key} cityData={value} />}
+                </div>
+            </div>
+        )
+    }else{
+        return(
+            <div>Loading...</div>
+        )
+    }
+    
 }

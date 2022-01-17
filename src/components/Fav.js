@@ -19,7 +19,7 @@ export default function Fav() {
         setNewFavorite([...newFavorite, newData])
 
     }
-    if (data) {
+    if (data.length) {
         return (
             <div className='p-5 fav'>
                 <div className='d-flex justify-content-left' style={{ flexWrap: "wrap" }}>{

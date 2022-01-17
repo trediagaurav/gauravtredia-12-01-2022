@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useGetforecastClimateQuery } from '../services/Post';
-import'../css/forecast.css';
+import '../css/forecast.css';
 import moment from 'moment';
 
 export default function DisplayForecast(props) {
@@ -10,8 +10,8 @@ export default function DisplayForecast(props) {
     if (responseInfo.isSuccess) {
         const forecastData = responseInfo.data.DailyForecasts
         return (
-        <div>
-        <div className='d-flex justify-content-center' style={{ flexWrap: "wrap" }}>{
+            <div>
+                <div className='d-flex justify-content-center' style={{ flexWrap: "wrap" }}>{
                     forecastData.map((item, i) => {
                         return (
                             <Card style={{ width: '12rem', height: '15em', margin: '5px' }} key={i}>
@@ -23,20 +23,27 @@ export default function DisplayForecast(props) {
                                         {item.Day.HasPrecipitation === true ? item.Day.IconPhrase : item.Night.IconPhrase}
                                     </Card.Text>
                                     <Card.Text>
-                                         {item.Day.HasPrecipitation === true ? <img src={require(`../assets/${item.Day.Icon}.png`)} width={100}/> : <img src={require(`../assets/${item.Night.Icon}.png`)} width={100}/>}
+                                        {item.Day.HasPrecipitation === true ? <img src={require(`../assets/${item.Day.Icon}.png`)} width={100} /> : <img src={require(`../assets/${item.Night.Icon}.png`)} width={100} />}
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
                         )
                     })
                 }
-        </div>
-        
-    </div>
-)
-        
-    } else {
-        return(
+                </div>
+
+            </div>
+        )
+
+    } else if (responseInfo.isError) {
+        return (
+            <div>
+                <h3 style={{ color: 'red' }}>ERROR !!!! Request Limitation Over</h3>
+            </div>
+        )
+    }
+    else {
+        return (
             <div>
                 Loading....
             </div>

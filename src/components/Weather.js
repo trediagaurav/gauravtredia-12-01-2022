@@ -85,6 +85,12 @@ function Weather(props) {
             </div>
         )
 
+    }else if (responseInfo.isError) {
+        return(
+            <div>
+                <h3 style={{color:'red'}}>ERROR !!!! Request Limitation Over</h3>
+            </div>
+        )
     } else {
         return (
             <div>
