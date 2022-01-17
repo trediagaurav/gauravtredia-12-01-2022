@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gauravtredia-12-01-2022/static/css/main.dc5aecee.css",
-    "main.js": "/gauravtredia-12-01-2022/static/js/main.c6c4912a.js",
+    "main.js": "/gauravtredia-12-01-2022/static/js/main.69f6868a.js",
     "static/js/787.27f12935.chunk.js": "/gauravtredia-12-01-2022/static/js/787.27f12935.chunk.js",
     "static/media/17.png": "/gauravtredia-12-01-2022/static/media/17.4b8d4543699af9743509.png",
     "static/media/41.png": "/gauravtredia-12-01-2022/static/media/41.da8960711b2a7bdd80c0.png",
@@ -9,11 +9,11 @@
     "static/media/15.png": "/gauravtredia-12-01-2022/static/media/15.9aac7942a26db293440b.png",
     "index.html": "/gauravtredia-12-01-2022/index.html",
     "main.dc5aecee.css.map": "/gauravtredia-12-01-2022/static/css/main.dc5aecee.css.map",
-    "main.c6c4912a.js.map": "/gauravtredia-12-01-2022/static/js/main.c6c4912a.js.map",
+    "main.69f6868a.js.map": "/gauravtredia-12-01-2022/static/js/main.69f6868a.js.map",
     "787.27f12935.chunk.js.map": "/gauravtredia-12-01-2022/static/js/787.27f12935.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dc5aecee.css",
-    "static/js/main.c6c4912a.js"
+    "static/js/main.69f6868a.js"
   ]
 }
