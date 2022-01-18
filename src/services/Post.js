@@ -13,7 +13,6 @@ export const postApi = createApi({
             query: () => {
                 return {
                     url: `currentconditions/v1/topcities/150?apikey=${API_KEY}`,
-                    mode: 'no-cors',
                     method: 'GET'
                 }  
             }
@@ -23,7 +22,6 @@ export const postApi = createApi({
             query:(param)=>{
                 return{
                     url:`currentconditions/v1/${param}?apikey=${API_KEY}`,
-                    mode: 'no-cors',
                     method : 'GET'
                 }
             }
@@ -32,7 +30,6 @@ export const postApi = createApi({
             query:(param)=>{
                 return{
                     url:`forecasts/v1/daily/5day/${param}?apikey=${API_KEY}`,
-                    mode: 'no-cors',
                     method : 'GET'
                 }
             }
